@@ -15,3 +15,9 @@ if [[ -z $TARGET ]]; then
     echo "target (-t) not specified"
     exit 1
 fi
+
+
+if [ -f /tmp/buildfail]; then
+    echo "Build failed on demand"
+    exit 1
+fi
