@@ -1,10 +1,17 @@
 #!/bin/bash
 
-if [ -f /tmp/buildfail ]; then
-   echo "Total build failure"
-   exit 1
+
+while getopts "t:" OPTION
+do
+  case $OPTION in
+      t)
+	  TARGET="$OPTARG"
+	  ;;
+      esac
+  done
+
+
+if [[ -z $TARGET ]]; then
+    echo "target (-t) not specified"
+    exit 1
 fi
-
-
-
-echo "All build OK"
