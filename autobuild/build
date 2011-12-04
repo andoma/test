@@ -17,7 +17,7 @@ if [[ -z $TARGET ]]; then
 fi
 
 
-if [ -f /tmp/buildfail]; then
+if [ -f /tmp/buildfail ]; then
     echo "Build failed on demand"
     exit 1
 fi
