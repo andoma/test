@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -f /tmp/buildfail ]; then
+   echo "Total build failure"
+   exit 1
+fi
+
+
+
+echo "All build OK"
