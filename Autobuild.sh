@@ -24,8 +24,20 @@ do
 done
 
 
+#
+# $1 = local file path
+# $2 = type
+# $3 = content-type
+# $4 = filename
+#
+artifact() {
+    echo "doozer-artifact:$PWD/$1:$2:$3:$4"
+}
+
+
 if [[ -z $TARGET ]]; then
     echo "target (-t) not specified"
     exit 1
 fi
 
+artifact test.png picture image/png test.png
