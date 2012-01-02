@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUILD_API_VERSION=1
+BUILD_API_VERSION=2
 EXTRA_BUILD_NAME=""
 
 while getopts "vht:e:" OPTION
