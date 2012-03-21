@@ -40,4 +40,6 @@ if [[ -z $TARGET ]]; then
     exit 1
 fi
 
-artifact test.png picture image/png test.png
+artifact test.png picture image/png test1.png
+artifact test.png picture image/png test2.png
+artifact test.png picture image/png test3.png
