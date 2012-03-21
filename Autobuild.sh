@@ -18,7 +18,7 @@ do
 	  TARGET="$OPTARG"
 	  ;;
       p)
-	  POSTFIX="$OPTARG"
+	  POSTFIX="-$OPTARG"
 	  ;;
       e)
 	  EXTRA_BUILD_NAME="$OPTARG"
@@ -43,6 +43,6 @@ if [[ -z $TARGET ]]; then
     exit 1
 fi
 
-artifact test.png picture image/png test1-${POSTFIX}.png
-artifact test.png picture image/png test2-${POSTFIX}.png
-artifact test.png picture image/png test3-${POSTFIX}.png
+artifact test.png picture image/png test1${POSTFIX}.png
+artifact test.png picture image/png test2${POSTFIX}.png
+artifact test.png picture image/png test3${POSTFIX}.png
