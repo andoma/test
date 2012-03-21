@@ -3,7 +3,7 @@
 BUILD_API_VERSION=2
 EXTRA_BUILD_NAME=""
 
-while getopts "vht:e:" OPTION
+while getopts "vht:e:p:" OPTION
 do
   case $OPTION in
       v)
@@ -16,6 +16,9 @@ do
 	  ;;
       t)
 	  TARGET="$OPTARG"
+	  ;;
+      p)
+	  POSTFIX="$OPTARG"
 	  ;;
       e)
 	  EXTRA_BUILD_NAME="$OPTARG"
@@ -40,6 +43,6 @@ if [[ -z $TARGET ]]; then
     exit 1
 fi
 
-artifact test.png picture image/png test1.png
-artifact test.png picture image/png test2.png
-artifact test.png picture image/png test3.png
+artifact test.png picture image/png test1-${POSTFIX}.png
+artifact test.png picture image/png test2-${POSTFIX}.png
+artifact test.png picture image/png test3-${POSTFIX}.png
