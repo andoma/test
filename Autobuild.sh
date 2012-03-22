@@ -17,9 +17,6 @@ do
       t)
 	  TARGET="$OPTARG"
 	  ;;
-      p)
-	  POSTFIX="-$OPTARG"
-	  ;;
       e)
 	  EXTRA_BUILD_NAME="$OPTARG"
 	  ;;
@@ -29,7 +26,7 @@ done
 
 #
 # $1 = local file path
-# $2 = type
+# $2 = file type
 # $3 = content-type
 # $4 = filename
 #
@@ -43,6 +40,6 @@ if [[ -z $TARGET ]]; then
     exit 1
 fi
 
-artifact test.png picture image/png test1${POSTFIX}.png
-artifact test.png picture image/png test2${POSTFIX}.png
-artifact test.png picture image/png test3${POSTFIX}.png
+artifact test.png png image/png test.png
+artifact test.png png image/png test2.png
+artifact test.png png image/png test3.png
