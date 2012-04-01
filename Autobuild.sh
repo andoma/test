@@ -2,8 +2,9 @@
 
 BUILD_API_VERSION=2
 EXTRA_BUILD_NAME=""
+UPLOAD_BUILD_ARTIFACTS=1
 
-while getopts "vht:e:p:" OPTION
+while getopts "vht:e:p:R" OPTION
 do
   case $OPTION in
       v)
@@ -20,6 +21,9 @@ do
       e)
 	  EXTRA_BUILD_NAME="$OPTARG"
 	  ;;
+      R)
+	  UPLOAD_BUILD_ARTIFACTS=0
+	  ;;
   esac
 done
 
@@ -31,7 +35,11 @@ done
 # $4 = filename
 #
 artifact() {
-    echo "doozer-artifact:$PWD/$1:$2:$3:$4"
+    if [ $UPLOAD_BUILD_ARTIFACTS -eq 1 ]; then
+	echo "doozer-artifact:$PWD/$1:$2:$3:$4"
+    else
+	echo "Not uploading: $1:$2:$3:$4"
+    fi
 }
 
 
@@ -39,3 +47,5 @@ if [[ -z $TARGET ]]; then
     echo "target (-t) not specified"
     exit 1
 fi
+
+artifact test.png png image/png test.png
