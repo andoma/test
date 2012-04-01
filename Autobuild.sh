@@ -39,7 +39,3 @@ if [[ -z $TARGET ]]; then
     echo "target (-t) not specified"
     exit 1
 fi
-
-artifact test.png png image/png test.png
-artifact test.png png image/png test2.png
-artifact test.png png image/png test3.png
